@@ -1,17 +1,17 @@
 version: '2'
 services: 
-  tweet:
-        build: ./tweet-ei-inference
-        privileged: true
-        restart: always
-        depends_on:
-                - wifi-connect
-        labels:
-                io.balena.features.dbus: '1'
-                io.balena.features.kernel-modules: '1'
-        volumes: 
-                - 'shared-data:/var/data'
-                - 'shared-media:/var/media'
+#   tweet:
+#         build: ./tweet-ei-inference
+#         privileged: true
+#         restart: always
+#         depends_on:
+#                 - wifi-connect
+#         labels:
+#                 io.balena.features.dbus: '1'
+#                 io.balena.features.kernel-modules: '1'
+#         volumes: 
+#                 - 'shared-data:/var/data'
+#                 - 'shared-media:/var/media'
   face:
         build: ./face-ei-inference
         privileged: true
@@ -33,7 +33,7 @@ services:
                 - 'shared-media:/var/media'
         depends_on:
                 - face
-                - tweet
+                # - tweet
         ports:
                 - "80"
                 
